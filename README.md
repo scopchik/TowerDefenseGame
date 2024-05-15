@@ -1,2 +1,2 @@
 # Tower Defense Game
-![Tower Defense]["Assets/Sprites/TowerDefense.jpg"]
+![Alt text]("Assets/Sprites/TowerDefense.jpg")
