@@ -1,2 +1,2 @@
 # Tower Defense Game
-![Alt text]("Assets/Sprites/TowerDefense.jpg")
+![Alt text]("https://github.com/scopchik/TowerDefenseGame/blob/main/Assets/Sprites/TowerDefense.jpg")
