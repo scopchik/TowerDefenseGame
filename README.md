@@ -1,2 +1,2 @@
-<h1>Tower Defense Game</h1>
-<img src = "Assets/Sprites/TowerDefense.jpg">
+# Tower Defense Game
+![Tower Defense]["Assets/Sprites/TowerDefense.jpg"]
