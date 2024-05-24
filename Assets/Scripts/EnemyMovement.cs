@@ -6,12 +6,10 @@ public class EnemyMovement : MonoBehaviour
     private Transform target;
     private int waypointIndex = 0;
     private Enemy enemy;
-    
 
     void Start()
     {
         enemy = GetComponent<Enemy>();
-
         target = WayPoints.points[0];
     }  
 
@@ -36,7 +34,6 @@ public class EnemyMovement : MonoBehaviour
         }
         waypointIndex++;
         target = WayPoints.points[waypointIndex];
-        
     }
 
     void EndPath()
