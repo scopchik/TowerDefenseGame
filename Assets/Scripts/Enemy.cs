@@ -3,14 +3,10 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float startSpeed = 10f;
-    
     [HideInInspector]public float speed;
-    
     public float health = 100;
     public int worth = 10;
     public GameObject enemyDeathEffect;
-
-      
 
     void Start()
     {
