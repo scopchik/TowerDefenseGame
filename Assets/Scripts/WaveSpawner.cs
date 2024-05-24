@@ -5,16 +5,12 @@ using UnityEngine.UI;
 public class WaveSpawner : MonoBehaviour
 {
     [SerializeField] private Transform enemyPrefab;
-
     [SerializeField] private Transform spawnPoint;
-
     [SerializeField] private float timeBetweenWaves = 5f;
     private float countdown = 2f;
-
     [SerializeField] private Text waveCountdownTimer;
-    
     private int waveIndex = 0;
-
+    
     void Update()
     {
         if(countdown <= 0f)
@@ -22,11 +18,9 @@ public class WaveSpawner : MonoBehaviour
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
         }
-
         countdown -= Time.deltaTime;
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
         waveCountdownTimer.text = string.Format("{0: 00.00}", countdown);
-
     }
 
     IEnumerator SpawnWave()
@@ -38,8 +32,6 @@ public class WaveSpawner : MonoBehaviour
             SpawnEnemy();
             yield return new WaitForSeconds(0.5f);
         }
-
-        
     }
 
     void SpawnEnemy()
