@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     {
         gameIsOver = false;
     }
-    // Update is called once per frame
+    
     void Update()
     {
         if(gameIsOver)
