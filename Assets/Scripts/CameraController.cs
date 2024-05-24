@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float scrollSpeed = 5f;
     [SerializeField] private float minY = 10f;
     [SerializeField] private float maxY = 80f;
-    // Update is called once per frame
+    
     void Update()
     {
         if(GameManager.gameIsOver)
@@ -17,9 +17,13 @@ public class CameraController : MonoBehaviour
             return;
         }
         if(Input.GetKeyDown(KeyCode.Escape))
+        {
             doMovement = !doMovement;
+        }
         if(!doMovement)
+        {
             return;
+        }
         if(Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness)
         {
             transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
@@ -36,11 +40,8 @@ public class CameraController : MonoBehaviour
         {
             transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
         }
-
         float scroll = Input.GetAxis("Mouse ScrollWheel");
-        
         Vector3 pos = transform.position;
-
         pos.y -= scroll * 1000 * scrollSpeed * Time.deltaTime;
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
 
