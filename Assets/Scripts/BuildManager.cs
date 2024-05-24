@@ -3,7 +3,11 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
-
+    public bool CanBuild{get{ return turretToBuild != null;}}
+    public bool HasMoney{get{ return PlayerStats.Money >= turretToBuild.cost;}}
+    public GameObject buildEffect;
+    private TurretBlueprint turretToBuild;
+    
     void Awake()
     {
         if(instance != null)
@@ -12,15 +16,7 @@ public class BuildManager : MonoBehaviour
             return;
         }
         instance = this;
-        
     }
-
-    public GameObject buildEffect;
-
-    private TurretBlueprint turretToBuild;
-
-    public bool CanBuild{get{ return turretToBuild != null;}}
-    public bool HasMoney{get{ return PlayerStats.Money >= turretToBuild.cost;}}
 
     public void BuildTurretOn(Node node)
     {
